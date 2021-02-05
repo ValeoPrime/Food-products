@@ -1,0 +1,57 @@
+.energyValue__wrapper
+    margin-top: 13px;
+    .energyValue__itemWrapper
+        display: flex;
+        flex-wrap: wrap;
+    .energyValue__item
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-basis: 25%
+        padding-top: 15px
+    .energyValue__value
+        font-family: Noto Sans,sans-serif
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 20px;
+        color: #333333;
+        margin-top: 2px;
+    .energyValue__unit
+        font-family: Open Sans, sans-serif
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 16px;
+        color: #999999;
+        margin-top: 2px;
+    .energyValue__dailyRate
+        font-family: Open Sans, sans-serif
+        font-style: normal;
+        font-weight: 600;
+        font-size: 10px;
+        line-height: 14px;
+        color: #707070;
+        background: #EBEBEB;
+        padding: 0 4px
+        margin-top: 4px;
+    .energyValue__button
+        display: block;
+        font-family: Noto Sans, sans-serif
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 20px;
+        color: #FFB000;
+        margin: 14px auto;
+        position: relative;
+        &::before
+            content: ''
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-top: 2px solid #FFB000;
+            border-left: 2px solid #FFB000;
+            transform: rotate(45deg);
+            right: -18px
+            top: calc( 50% - 2px  )
+
