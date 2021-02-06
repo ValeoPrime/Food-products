@@ -1,0 +1,57 @@
+.deliveryAdress__wrapper
+    padding: 18px 13px 18px 18px
+    font-family: Noto Sans, sans-serif
+    position: relative;
+    background: #FFFFFF;
+    border-radius:  8px 8px 0 0;
+
+    .deliveryAdress__title
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 22px;
+        color: #333333;
+    .deliveryAdress__inputs__wrapper
+        margin-top: 19px;
+        position: relative;
+        label:before
+            content: ''
+            width: 12px;
+            height: 12px;
+            position: absolute;
+            top: calc( 50% - 36px )
+            right: 10px
+            border-top: 2px solid #333333;
+            border-left: 2px solid #333333;
+            transform: rotate(135deg);
+    .deliveryAdress__inner__wrapper
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+    .deliveryAdress__town
+        width: 100%
+
+
+    .delivery__input
+        background: #FFFFFF;
+        border: 1px solid #EBEBEB;
+        border-radius: 8px;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 19px;
+        color: #333333;
+        outline: none
+        padding: 16px 11px
+    input:focus
+        border: 1px solid #FFB000;
+    .deliveryAdress__flat, .deliveryAdress__floor,
+    .deliveryAdress__block
+        max-width: 87px
+    input + input
+        margin-left: 9px;
+
+    .deliveryAdress__delete
+        position: absolute;
+        top: 18px
+        right: 11px;
+        cursor: pointer

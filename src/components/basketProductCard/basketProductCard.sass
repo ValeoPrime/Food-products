@@ -1,0 +1,90 @@
+.basketProduct__card
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: 12px 8px 12px 3px
+    width: 312px;
+    min-width: 312px
+    font-family: 'Noto Sans', sans-serif
+    font-weight: 500
+    color: #333333;
+    margin: 0 auto;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #F2F2F2;
+    .basketProduct__cardImg__wrapper
+        margin: 0 auto
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 43px;
+        max-height: 49px
+        margin-right: 7px;
+    .basketProduct__inner__wrapper
+        padding-right: 20px
+
+    .basketProduct__card__title
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 18px;
+        margin-top: 8px;
+    .basketPricePerUnit
+        font-size: 12px;
+        line-height: 16px;
+        color: #878786;
+
+    .basketProduct__card__price
+        font-family: 'Mukta', sans-serif
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 20px;
+        margin-right: 6px;
+    .basketProduct__price__wrapper
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 6px;
+    .basketProduct__card__wrapper
+        min-height: 100%;
+        display: flex;
+        flex-direction: column
+        align-items: flex-end;
+        .addCard__wrapper
+            margin-top: 18px;
+    .basketProduct__card__details
+        font-family: Noto Sans, sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 10px;
+        line-height: 20px;
+        color: #333333;
+        padding-right: 10px
+        position: relative;
+        &::before
+            content: ''
+            width: 6px;
+            height: 6px;
+            position: absolute;
+            right: 2px;
+            top: calc( 50% - 2px );
+            border-top: 2px solid #333333;
+            border-left: 2px solid #333333;
+            transform: rotate(135deg);
+
+
+    .addCard__wrapper
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 22px;
+        color: #FFBC41;
+    button
+        width: 28px;
+        height: 28px;
+    .addCard__button
+        margin-left: 10px;
+    .deleteCard__button
+        margin-right: 10px;
+    .addCard__counter
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;

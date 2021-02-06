@@ -1,12 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.sass";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter, Route, Switch} from 'react-router-dom';
+import ProductCategory from './components/productCategory/ProductCategory';
+import Cart from './components/cart/Cart';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+    <Switch>
+      <Route path="/product" component={ProductCategory} exact/>
+      <Route path="/cart" component={Cart} exact/>
+    </Switch>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );
