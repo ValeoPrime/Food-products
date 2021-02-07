@@ -8,7 +8,12 @@ import {
   cartDeleteProduct,
 } from "../../store/actions/cartActions";
 
-const AddCart = ({ count = 0, productId, cartAddProduct, cartDeleteProduct }) => {
+const AddCart = ({
+  count = 0,
+  productId,
+  cartAddProduct,
+  cartDeleteProduct,
+}) => {
   return (
     <div className="addCard__wrapper">
       {count == 0 ? (

@@ -2,7 +2,7 @@ import React from 'react'
 import './deliveryWidget.sass'
 import deliveryIcon from '../../img/icons/deliveryIcon.svg'
 
-const DeliveryWidget = () => {
+const DeliveryWidget = ({total}) => {
     return (
         <div className='deliveryWidget__wraper'>
             <div className='deliveryWidget__icon__wrapper'>
@@ -14,7 +14,7 @@ const DeliveryWidget = () => {
             </div>
             <div className='deliveryWidget__duration'>
                 <div className='deliveryWidget__tittle'>Total:</div>
-                <div className='deliveryWidget__value'>£ 150.99</div>
+                <div className='deliveryWidget__value'>£ {total}</div>
             </div>
             <button className='deliveryWidget__button'>Checkout </button>
         </div>

@@ -3,6 +3,7 @@
     border-radius: 8px;
     height: 100%;
     padding-bottom: 80px
+
 .cart__header
     display: flex
     align-items: center
@@ -16,6 +17,8 @@
     height: 123px
     background-color: #FFB000;
     position: relative
+    border-radius: 0 0 8px 8px
+    transition: all 1s
     .return__button
         width: 24px
         height: 24px;
@@ -23,7 +26,16 @@
         left: 12px
         top: calc( 50% - 12px  )
 .cart__body
-
     border-radius: 8px;
     max-width: 312px
     margin: 0 auto
+
+.cart__header__scroll
+    height: 50px
+    position: fixed;
+    top: 0
+    left: 0
+    z-index: 10;
+    width: 100%;
+
+

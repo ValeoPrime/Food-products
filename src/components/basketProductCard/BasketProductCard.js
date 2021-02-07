@@ -4,7 +4,7 @@ import "./basketProductCard.sass";
 import milk from "../../img/contentImg/milk.png";
 import { NavLink } from "react-router-dom";
 
-const BasketProductCard = () => {
+const BasketProductCard = ({product, productId}) => {
   return (
     <div className="basketProduct__card">
       <div className="basketProduct__cardImg__wrapper">
@@ -12,17 +12,17 @@ const BasketProductCard = () => {
       </div>
       <div className="basketProduct__inner__wrapper">
         <h3 className="basketProduct__card__title">
-          Just Milk Semi-Skimmed 6 x 1L (Case of 2)
+          {product.title}
         </h3>
         <div className="basketProduct__price__wrapper">
-          <div className="basketProduct__card__price">£1.59</div>
-          <div className="basketPricePerUnit">1 pc / £1.59</div>
+          <div className="basketProduct__card__price">£{product.price}</div>
+          <div className="basketPricePerUnit">1 pc / £{product.pricePerUnit}</div>
         </div>
       </div>
 
       <div className="basketProduct__card__wrapper">
         <NavLink  className="basketProduct__card__details" to='/product'>Details</NavLink>
-        <AddCart />
+        <AddCart count={product.cartCount} productId={productId}/>
       </div>
     </div>
   );

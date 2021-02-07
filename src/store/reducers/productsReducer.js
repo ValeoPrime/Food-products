@@ -31,29 +31,28 @@ export default function productsReducer(state = initialState, action) {
         allProducts: arr,
       };
     case CART_ADD_PRODUCT:
-        let add = state.allProducts
-        .map((item) => {
-          if (item.id === action.payload) {
-            item.cartCount = item.cartCount + 1;
-          }
-          return item;
-        })
+      let add = state.allProducts.map((item) => {
+        if (item.id === action.payload) {
+          item.cartCount = item.cartCount + 1;
+        }
+        return item;
+      });
 
       return {
         ...state,
-        allProducts: add
+        allProducts: add,
       };
     case CART_DELETE_PRODUCT:
-      let del = state.allProducts
-        .map((item) => {
-          if (item.id === action.payload) {
-            item.cartCount = item.cartCount - 1;
-          }
-          return item;
-        })
+      let del = state.allProducts.map((item) => {
+        if (item.id === action.payload) {
+          item.cartCount = item.cartCount - 1;
+        }
+        return item;
+      });
 
       return {
-        ...state, allProducts: del
+        ...state,
+        allProducts: del,
       };
     default:
       return state;
