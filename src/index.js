@@ -1,20 +1,31 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.sass";
-import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter, Route, Switch} from 'react-router-dom';
-import ProductCategory from './components/productCategory/ProductCategory';
-import Cart from './components/cart/Cart';
 
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import rootReducer from './store/reducers/rootReducer'
+
+import ProductCategory from "./components/productCategory/ProductCategory";
+import Cart from "./components/cart/Cart";
+import App from "./App";
+import "./index.sass";
+
+
+const store = createStore(rootReducer)
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-    <Switch>
-      <Route path="/product" component={ProductCategory} exact/>
-      <Route path="/cart" component={Cart} exact/>
-    </Switch>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" component={App} exact />
+          <Route path="/product" component={ProductCategory} exact />
+          <Route path="/cart" component={Cart} exact />
+        </Switch>
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
