@@ -1,4 +1,5 @@
 import { CART_ADD_PRODUCT, CART_DELETE_PRODUCT } from "../actions/actionTypes";
+import {changeCount} from '../../helpers/helpers'
 
 const initialState = {
   cartProducts: [
@@ -9,6 +10,7 @@ const initialState = {
       price: 1.59,
       cartCount: 3,
       favorite: false,
+      special: null
     },
     {
       id: 1548237,
@@ -17,6 +19,16 @@ const initialState = {
       price: 2.59,
       cartCount: 5,
       favorite: false,
+      special:"Price has been changed: (£4.59)"
+    },
+    {
+      id: 1548217,
+      title: "Just Juis Semi-Skim 8 x 1L (Case of 1)",
+      pricePerUnit: 6.59,
+      price: 4.59,
+      cartCount: 2,
+      favorite: false,
+      special:"Special offer: -20%"
     },
   ],
 };
@@ -24,28 +36,14 @@ const initialState = {
 export default function cartReducer(state = initialState, action) {
   switch (action.type) {
     case CART_ADD_PRODUCT:
-      let add = state.cartProducts.map((item) => {
-        if (item.id === action.payload) {
-          item.cartCount = item.cartCount + 1;
-        }
-        return item;
-      });
-
       return {
         ...state,
-        cartProducts: add,
+        cartProducts: changeCount(state.cartProducts,action.payload, 1),
       };
     case CART_DELETE_PRODUCT:
-      let del = state.cartProducts.map((item) => {
-        if (item.id === action.payload) {
-          item.cartCount = item.cartCount - 1;
-        }
-        return item;
-      });
-
       return {
         ...state,
-        cartProducts: del,
+        cartProducts: changeCount(state.cartProducts,action.payload, -1),
       };
     default:
       return state;

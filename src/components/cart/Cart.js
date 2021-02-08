@@ -30,8 +30,8 @@ const Cart = ({ cart }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  let orderSumm = orderCoast(cart);
-  let total = (orderSumm - 0.65 + 0.18).toFixed(2);
+  let orderSumm = +orderCoast(cart);
+  let total = +(orderSumm - 0.65 + 0.18).toFixed(2);
 
   return (
     <div className="cart__wrapper">

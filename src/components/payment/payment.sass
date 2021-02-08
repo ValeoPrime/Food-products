@@ -10,6 +10,18 @@
     .payment__promoCode__wraper
         width: 100%;
         margin-top: 10px;
+        position: relative;
+        .payment__promoCode--succes
+            &::before
+                content: ''
+                position: absolute;
+                width: 28px;
+                height: 28px;
+                right: 9px;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-image: url('../../img/icons/promoCode-succes.svg')
+                top: calc( 50% - 14px )
         input
             padding: 13px 17px
             font-weight: 500;

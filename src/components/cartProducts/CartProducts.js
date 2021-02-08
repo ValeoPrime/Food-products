@@ -12,7 +12,6 @@ const CartProducts = ({ products }) => {
         return (
           <BasketProductCard
             product={product}
-            productId={product.id}
             key={product.id}
           />
         );

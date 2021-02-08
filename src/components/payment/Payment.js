@@ -8,7 +8,9 @@ const Payment = ({ orderSumm, total }) => {
     <div className="payment__wraper">
       <h3 className="payment__title">Payment</h3>
       <div className="payment__promoCode__wraper">
-        <input type="text" placeholder="Promocode" />
+        <label className="payment__promoCode--succes">
+          <input type="text" placeholder="Promocode" />
+        </label>
       </div>
       <div className="payment__total__wraper">
         <div className="payment__item">

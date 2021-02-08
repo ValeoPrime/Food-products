@@ -3,6 +3,7 @@ import {
   CART_ADD_PRODUCT,
   CART_DELETE_PRODUCT,
 } from "../actions/actionTypes";
+import {changeCount, toggleFavorite} from '../../helpers/helpers'
 
 const initialState = {
   allProducts: [
@@ -53,39 +54,19 @@ const initialState = {
 export default function productsReducer(state = initialState, action) {
   switch (action.type) {
     case TOGGLE_FAVORITE:
-      let arr = state.allProducts.map((item) => {
-        if (item.id === action.payload) {
-          item.favorite = !item.favorite;
-        }
-        return item;
-      });
       return {
         ...state,
-        allProducts: arr,
+        allProducts: toggleFavorite(state.allProducts, action.payload),
       };
     case CART_ADD_PRODUCT:
-      let add = state.allProducts.map((item) => {
-        if (item.id === action.payload) {
-          item.cartCount = item.cartCount + 1;
-        }
-        return item;
-      });
-
       return {
         ...state,
-        allProducts: add,
+        allProducts: changeCount(state.allProducts,action.payload, 1),
       };
     case CART_DELETE_PRODUCT:
-      let del = state.allProducts.map((item) => {
-        if (item.id === action.payload) {
-          item.cartCount = item.cartCount - 1;
-        }
-        return item;
-      });
-
       return {
         ...state,
-        allProducts: del,
+        allProducts: changeCount(state.allProducts,action.payload, -1),
       };
     default:
       return state;
