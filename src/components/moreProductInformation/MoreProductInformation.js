@@ -1,10 +1,12 @@
 import React from "react";
+import PropTypes from 'prop-types'
+
 import "./moreProductInformation.sass";
 import Ingridients from "./../ingridients/Ingridients";
 import OtherInformation from "./../otherInformation/OtherInformation";
 import EnergyValue from "../energyValue/EnergyValue";
 
-const MoreProductInformation = () => {
+const MoreProductInformation = ({nutritions}) => {
   return (
     <div className="productInformation__container">
       <div className="productInformation__wrapper">
@@ -30,12 +32,16 @@ const MoreProductInformation = () => {
           </li>
         </ul>
         <hr />
-        <EnergyValue />
+        <EnergyValue nutritions={nutritions}/>
         <Ingridients />
         <OtherInformation />
       </div>
     </div>
   );
 };
+
+MoreProductInformation.propTypes = {
+  nutritions: PropTypes.array
+}
 
 export default MoreProductInformation;

@@ -1,10 +1,9 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import "./payment.sass";
 
-
-
-const Payment = ({ orderSumm, total}) => {
-
+const Payment = ({ orderSumm, total }) => {
   return (
     <div className="payment__wraper">
       <h3 className="payment__title">Payment</h3>
@@ -32,6 +31,11 @@ const Payment = ({ orderSumm, total}) => {
       </div>
     </div>
   );
+};
+
+Payment.propTypes = {
+  orderSumm: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
 };
 
 export default Payment;

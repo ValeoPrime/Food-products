@@ -1,6 +1,6 @@
 import React from "react";
 import "./deliveryAdress.sass";
-import delAdress from '../../img/icons/delAdress.svg'
+import delAdress from "../../img/icons/delAdress.svg";
 
 const DeliveryAdress = () => {
   return (
@@ -34,7 +34,7 @@ const DeliveryAdress = () => {
         </div>
       </div>
       <button className="deliveryAdress__delete">
-          <img src={delAdress}/>
+        <img src={delAdress} />
       </button>
     </div>
   );

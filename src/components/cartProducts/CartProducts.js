@@ -1,16 +1,28 @@
-import React from 'react'
-import BasketProductCard from '../basketProductCard/BasketProductCard'
-import './cartProducts.sass'
+import React from "react";
+import PropTypes from "prop-types";
 
-const CartProducts = ({products}) => {
-    return (
-        <div className='cartProducts__wrapper'>
-            <div className='cartProducts__title'> 2 items</div>
-            {products.map(product => {
-                return <BasketProductCard product={product} productId={product.id} key={product.id}/>
-            })}
-        </div>
-    )
-}
+import BasketProductCard from "../basketProductCard/BasketProductCard";
+import "./cartProducts.sass";
 
-export default CartProducts
+const CartProducts = ({ products }) => {
+  return (
+    <div className="cartProducts__wrapper">
+      <div className="cartProducts__title"> 2 items</div>
+      {products.map((product) => {
+        return (
+          <BasketProductCard
+            product={product}
+            productId={product.id}
+            key={product.id}
+          />
+        );
+      })}
+    </div>
+  );
+};
+
+CartProducts.propTypes = {
+  products: PropTypes.array.isRequired,
+};
+
+export default CartProducts;

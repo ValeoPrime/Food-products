@@ -1,13 +1,14 @@
 import React from "react";
+
 import "./shortProductCard.sass";
 import Favorite from "./../favorite/Favorite";
 import AddCart from "../addCart/AddCart";
 import milk from "../../img/contentImg/milk.png";
 
-const ShortProductCard = () => {
+const ShortProductCard = ({favorite, productId}) => {
   return (
     <div className="shortproduct__card">
-      <Favorite />
+      <Favorite favorite={favorite} productId={productId}/>
       <div className="shortproduct__cardImg__wrapper">
         <img className="shortproduct__card__img" src={milk} alt="product" />
       </div>
@@ -17,7 +18,7 @@ const ShortProductCard = () => {
       <div className="shortpricePerUnit">1 pc / £1.59</div>
       <div className="shortproduct__card__price__wrapper">
         <div className="shortproduct__card__price">£1.59</div>
-        <AddCart />
+        <AddCart productId={productId}/>
       </div>
     </div>
   );

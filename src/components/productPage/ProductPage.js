@@ -1,5 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
+
 import "./productPage.sass";
 import { toggleFavorite } from "../../store/actions/productsActions";
 import ProductCard from "./../productCard/ProductCard";
@@ -18,7 +20,7 @@ const ProductPage = ({ products, toggleFavorite }) => {
           <div key={1}>
             <ProductCard product={product} changeFavorite={changeFavorite} />
             <RelatedProduct />
-            <MoreProductInformation />
+            <MoreProductInformation nutritions = {product.nutritions}/>
           </div>
         );
       })}
@@ -36,6 +38,11 @@ const mapDispatchToProps = (dispatch) => {
   return {
     toggleFavorite: (id) => dispatch(toggleFavorite(id)),
   };
+};
+
+ProductPage.propTypes = {
+  products: PropTypes.array.isRequired,
+  toggleFavorite: PropTypes.func,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductPage);

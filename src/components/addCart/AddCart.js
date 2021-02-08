@@ -1,8 +1,10 @@
 import React from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+
 import "./addCart.sass";
 import addCard from "../../img/icons/addCard.svg";
 import deleteCard from "../../img/icons/deleteCard.svg";
-import { connect } from "react-redux";
 import {
   cartAddProduct,
   cartDeleteProduct,
@@ -42,6 +44,13 @@ const mapDispatchToProps = (dispatch) => {
     cartAddProduct: (id) => dispatch(cartAddProduct(id)),
     cartDeleteProduct: (id) => dispatch(cartDeleteProduct(id)),
   };
+};
+
+AddCart.propTypes = {
+  count: PropTypes.number,
+  productId: PropTypes.number.isRequired,
+  cartAddProduct: PropTypes.func,
+  cartDeleteProduct: PropTypes.func,
 };
 
 export default connect(null, mapDispatchToProps)(AddCart);
